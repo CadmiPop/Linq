@@ -95,6 +95,11 @@ namespace LinqFacts
         public void Test_function_ToDictionary()
         {
             List<BlockbusterMovie> movies = new BlockbusterMovies();
+            new[] {1, 2, 4}.Select(x => new
+            {
+                Title = $"{x}-title",
+                Description = string.Format("{0} - {1}", x, x + 1)
+            }).ToDictionary(x => x.Title, x => x.Description);
 
             var d = movies.ToDictionary(x => x.Name, y => y.ID);
         }
@@ -106,7 +111,16 @@ namespace LinqFacts
             string[] words = { "one", "two", "three" };
 
             var numbersAndWords = numbers.Zip(words, (first, second) => first + " " + second);
+        }
 
+        [Fact]
+        public void Test_function_Aggregate()
+        {
+            int[] ints = { 4, 8, 8, 3, 9, 0, 7, 8, 2 };
+
+            int numEven = ints.Aggregate(0, (total, next) => next % 2 == 0 ? total + 1 : total);
+
+            Assert.Equal(6, numEven);
         }
     }
 }
