@@ -71,7 +71,7 @@ namespace LinqFacts
 
         public List<Product> ProductsWithNoFeatures(List<Product> list, List<Feature> listFeatures)
         {
-            var dfs = list.Where(p => HasAllNOFeatures(p, listFeatures));
+            var dfs = list.Where(p => HasNOFeatures(p, listFeatures));
             return new List<Product>(dfs);
         }
 
@@ -81,7 +81,7 @@ namespace LinqFacts
         private bool HasAllGivenFeatures(Product product, List<Feature> listFeatures)
             => product.Features != null && listFeatures.All(f => product.Features.Any(lf => lf.Id == f.Id));
 
-        private bool HasAllNOFeatures(Product product, List<Feature> listFeatures)
+        private bool HasNOFeatures(Product product, List<Feature> listFeatures)
             => product.Features != null && listFeatures.All(f => product.Features.All(lf => lf.Id != f.Id));
 
     }
