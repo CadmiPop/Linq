@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Linq": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Andreea\\source\\repos\\poze C:\\Users\\Andreea\\source\\repos\\newDestination"
+    }
+  }
+}
