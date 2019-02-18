@@ -35,8 +35,18 @@ namespace LinqFacts
                 new Product(){Name = "gaini", Quantity = 6}
             };
 
-            var list = TrasformToOneList(list1, list2);
+            var expected = new List<Product>
+            {
+                new Product(){Name = "caini", Quantity = 10},
+                new Product(){Name = "dasdsadas", Quantity = 3},
+                new Product(){Name = "pisici", Quantity = 10},
+                new Product(){Name = "gaini", Quantity = 10}
+            };
+
+            var result = TrasformToOneList(list1, list2);
+            Assert.Equal(expected,result);
         }
+
         public List<Product>TrasformToOneList(List<Product> list1, List<Product>list2)
         {
             var list = list1.Concat(list2);
