@@ -26,7 +26,7 @@ namespace Linq
 
             if (source == null)
             {
-                Console.WriteLine("Args can't be null");
+                 Console.WriteLine("Args can't be null");
             }
 
             if (Directory.Exists(source))
