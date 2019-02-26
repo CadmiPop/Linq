@@ -2,7 +2,7 @@
   "profiles": {
     "Linq": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Andreea\\source\\repos\\poze C:\\Users\\Andreea\\source\\repos\\newDestination YYYY-DD-MM C:\\Users\\Andreea\\source\\repos\\poze\\1.jpg LOZ"
+      "commandLineArgs": "-source=C:\\Users\\Andreea\\source\\repos\\poze -sourceDestination=C:\\Users\\Andreea\\source\\repos\\newDestination -folderType=yyyy/dd/MM -prefix=yyyy-dd-MM"
     }
   }
 }
