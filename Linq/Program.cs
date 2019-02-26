@@ -20,11 +20,12 @@ namespace Linq
         {
             var files = new string[] { };
 
+            string arg(string s) => args.First(x => x.StartsWith('-' + s + '=')).Replace('-'+ s + '=', "");
 
-            var source = args.First(x => x.StartsWith("-source=")).Replace("-source=","");
-            var sourceDestionation = args.First(x => x.StartsWith("-sourceDestination=")).Replace("-sourceDestination=", "");
-            var folderType = args.First(x => x.StartsWith("-folderType")).Replace("-folderType=", "");
-            var prefix = args.First(x => x.StartsWith("-prefix")).Replace("-prefix=", "");
+            var source = arg("source");
+            var sourceDestionation = arg("sourceDestination");
+            var folderType = arg("folderType");
+            var prefix = arg("prefix");
 
 
             if (source == null)
