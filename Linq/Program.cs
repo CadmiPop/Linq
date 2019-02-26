@@ -7,8 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
+using System.Runtime.ExceptionServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+
 
 namespace Linq
 {
@@ -18,10 +20,11 @@ namespace Linq
         {
             var files = new string[] { };
 
-            var source = args[0].Substring(8);
-            var sourceDestionation = args[1].Substring(19);
-            var folderType = args[2].Substring(12);
-            var prefix = args[3].Substring(8);
+
+            var source = args.First(x => x.StartsWith("-source=")).Replace("-source=","");
+            var sourceDestionation = args.First(x => x.StartsWith("-sourceDestination=")).Replace("-sourceDestination=", "");
+            var folderType = args.First(x => x.StartsWith("-folderType")).Replace("-folderType=", "");
+            var prefix = args.First(x => x.StartsWith("-prefix")).Replace("-prefix=", "");
 
 
             if (source == null)
